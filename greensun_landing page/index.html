@@ -1,0 +1,766 @@
+﻿<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Sun - Giải Pháp Điện Mặt Trời Chuyên Nghiệp</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'], // Font mạnh mẽ, hợp với chữ GREEN SUN
+                    },
+                    colors: {
+                        brand: {
+                            green: '#00a651', /* Green Sun Primary */
+                            red: '#ed1c24',   /* Green Sun Red Accent */
+                            gray: '#f4f5f7',  /* Off-white/Light gray */
+                            dark: '#2d3748',  /* Dark text */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-sans text-brand-dark bg-white selection:bg-brand-green selection:text-white overflow-x-hidden">
+
+    <!-- Feature 1: Weather/Yield Alert Bar -->
+    <div class="fixed top-0 w-full z-[60] bg-brand-red text-white text-xs md:text-sm py-2 text-center font-medium shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-center items-center gap-2 animate-pulse">
+            <i class="fa-solid fa-cloud-sun text-lg"></i> 
+            <span><strong>Thời tiết:</strong> Khu vực bạn sinh sống sắp bước vào đỉnh điểm nắng nóng của mùa hè. Lắp đặt ngay để có hiệu suất <span class="bg-white text-brand-red px-1.5 py-0.5 rounded font-bold">98%</span></span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-8 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- Logo matching uploaded image -->
+                    <div class="relative h-12 flex items-center justify-center">
+                        <img src="assets/images/logo.png" alt="Green Sun Logo" class="h-full w-auto object-contain">
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#ve-chung-toi" class="text-gray-600 hover:text-brand-green font-semibold transition">Về chúng tôi</a>
+                    <a href="#cong-cu" class="text-gray-600 hover:text-brand-green font-semibold transition">Tính toán chi phí</a>
+                    <a href="#dich-vu" class="text-gray-600 hover:text-brand-green font-semibold transition">Dịch vụ</a>
+                    <a href="#du-an" class="text-gray-600 hover:text-brand-green font-semibold transition">Dự án</a>
+                </nav>
+                <div class="hidden md:flex">
+                    <a href="#lien-he" class="bg-brand-red text-white px-6 py-2.5 rounded-full font-bold hover:bg-red-700 shadow-md transition transform hover:-translate-y-0.5">
+                        Khảo sát miễn phí
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-brand-green hover:text-brand-red focus:outline-none transition">
+                        <i class="fa-solid fa-bars text-2xl" id="mobileMenuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full">
+            <nav class="flex flex-col px-4 pt-2 pb-4 space-y-2">
+                <a href="#ve-chung-toi" class="mobile-link text-gray-600 hover:text-brand-green font-semibold py-2 transition border-b border-gray-50">Về chúng tôi</a>
+                <a href="#cong-cu" class="mobile-link text-gray-600 hover:text-brand-green font-semibold py-2 transition border-b border-gray-50">Tính toán chi phí</a>
+                <a href="#dich-vu" class="mobile-link text-gray-600 hover:text-brand-green font-semibold py-2 transition border-b border-gray-50">Dịch vụ</a>
+                <a href="#du-an" class="mobile-link text-gray-600 hover:text-brand-green font-semibold py-2 transition border-b border-gray-50">Dự án</a>
+                <a href="#lien-he" class="mobile-link bg-brand-red text-white px-4 py-3 mt-2 rounded-lg font-bold text-center hover:bg-red-700 shadow-sm transition">Khảo sát miễn phí</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Clean Light Theme with Diagonal Accent) -->
+    <section class="relative pt-36 pb-24 lg:pt-48 lg:pb-32 bg-brand-gray overflow-hidden">
+        <!-- Background shape matching the logo design -->
+        <div class="absolute top-0 right-0 w-2/3 h-full bg-white opacity-50 transform skew-x-12 translate-x-20 pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-brand-green opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="text-center lg:text-left reveal active lg:col-span-5">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-brand-green font-bold text-sm mb-6 shadow-sm border border-green-100">
+                        <i class="fa-solid fa-leaf text-brand-green"></i> Chuẩn Năng Lượng Xanh 2026
+                    </div>
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-5xl font-black text-brand-dark leading-tight mb-6 uppercase">
+                        giải pháp điện mặt trời an toàn, tiết kiệm, uy tín số 1 <br>
+                        <span class="text-brand-green">GREEN</span> <span class="text-brand-red">SUN</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium">
+                        Khủng hoảng giá điện mùa nóng? Lắp hệ thống 5kWp (gánh 2 điều hòa, 1 tủ lạnh) với giá tận xưởng. Không qua trung gian, cam kết hoàn vốn chỉ từ 2 năm.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#cong-cu" class="bg-brand-green text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 shadow-lg shadow-green-200 transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator"></i> Tính phí đầu tư
+                        </a>
+                        <a href="#lien-he" class="bg-white text-brand-dark border-2 border-gray-200 px-8 py-4 rounded-full font-bold text-lg hover:border-brand-red hover:text-brand-red transition text-center flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-calendar-check"></i> Đặt lịch khảo sát
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative flex justify-center items-center reveal active w-full mt-10 lg:mt-0 lg:col-span-7">
+                    <!-- YouTube Autoplay Video Container -->
+                    <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white z-20 group">
+                        <!-- Lớp phủ (Overlay) Nút bật âm thanh -->
+                        <div id="unmuteOverlay" class="absolute inset-0 bg-black/20 z-30 flex items-center justify-center cursor-pointer transition-opacity duration-300 hover:bg-black/40">
+                            <div class="bg-brand-red text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg shadow-red-500/50 flex items-center gap-3 animate-pulse border-2 border-white">
+                                <i class="fa-solid fa-volume-xmark text-xl"></i> Bấm để bật âm thanh
+                            </div>
+                        </div>
+
+                        <!-- Khung chứa iFrame Youtube -->
+                        <iframe id="youtubeIframe" class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dXcNNcGcCvc?autoplay=1&mute=1&controls=0&playsinline=1&rel=0&loop=1&playlist=dXcNNcGcCvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Floating Trust Badge -->
+                    <div class="absolute -bottom-6 -right-4 lg:-right-10 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 z-40 border border-gray-100 hidden sm:flex">
+                        <div class="bg-green-50 p-2 rounded-full text-brand-green">
+                            <i class="fa-solid fa-shield-check text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Bảo hành lên đến</p>
+                            <p class="font-black text-brand-dark text-lg">25 Năm</p>
+                        </div>
+                    </div>
+                </div>            </div>
+        </div>
+    </section>
+
+    <!-- Partners & Trust Marquee -->
+    <section class="py-6 border-y border-gray-200 bg-white overflow-hidden relative">
+        <div class="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
+            <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Thiết bị tiêu chuẩn toàn cầu</p>
+        </div>
+        <div class="flex overflow-hidden">
+            <div class="animate-scroll flex items-center justify-around w-full gap-10">
+                <!-- Set 1 -->
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-brand-green transition cursor-default">Jinko<span class="font-light">Solar</span></div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-brand-red transition cursor-default">Canadian<span class="text-gray-400">Solar</span></div>
+                <div class="flex items-center gap-2 text-2xl font-black text-gray-300 hover:text-brand-dark transition cursor-default">SMA</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-brand-green transition cursor-default">Growatt</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-blue-500 transition cursor-default">SUNGROW</div>
+                
+                <!-- Set 2 -->
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-brand-green transition cursor-default">Jinko<span class="font-light">Solar</span></div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-brand-red transition cursor-default">Canadian<span class="text-gray-400">Solar</span></div>
+                <div class="flex items-center gap-2 text-2xl font-black text-gray-300 hover:text-brand-dark transition cursor-default">SMA</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-brand-green transition cursor-default">Growatt</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-gray-300 hover:text-blue-500 transition cursor-default">SUNGROW</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Point & Solution Section (Clean UI) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <!-- Problem -->
+                <div class="bg-white border border-gray-200 p-8 rounded-3xl reveal flex flex-col justify-center shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-bl-full -z-10"></div>
+                    <div class="w-14 h-14 bg-red-50 text-brand-red rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-dark mb-4">Nỗi Lo Của Bạn...</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-brand-red mt-1 text-lg"></i>
+                            <span class="text-gray-600"><strong>Chi phí điện bậc cao:</strong> Hóa đơn tiền điện tăng đột biến vào mùa nắng nóng (đặc biệt ở mức giá bậc 5, bậc 6), gây áp lực lớn lên chi tiêu hàng tháng của gia đình.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-brand-red mt-1 text-lg"></i>
+                            <span class="text-gray-600"><strong>Mái nhà hấp thụ nhiệt cao:</strong> Tình trạng nắng nóng khiến không gian sống oi bức, buộc các thiết bị làm mát phải hoạt động hết công suất và tiêu tốn nhiều điện năng hơn.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-brand-red mt-1 text-lg"></i>
+                            <span class="text-gray-600"><strong>Rủi ro về thi công và hậu mãi:</strong> E ngại các đơn vị lắp đặt thiếu chuyên nghiệp, thi công gây thấm dột mái nhà hoặc từ chối trách nhiệm bảo hành sau khi hoàn thiện.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution -->
+                <div class="bg-brand-green text-white p-8 rounded-3xl shadow-xl shadow-green-100 reveal delay-100 flex flex-col justify-center relative overflow-hidden">
+                    <!-- Diagonal accent matching logo -->
+                    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-white opacity-10 transform rotate-45"></div>
+                    <div class="w-14 h-14 bg-white text-brand-green rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner relative z-10">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold mb-4 relative z-10">Giải Pháp Green Sun</h2>
+                    <ul class="space-y-4 relative z-10">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-white mt-1 text-lg bg-green-500 rounded-full w-6 h-6 flex items-center justify-center text-sm"></i>
+                            <span class="text-green-50"><strong>Tối ưu hóa chi phí điện năng:</strong> Tận dụng tối đa nguồn điện mặt trời ban ngày. Thoải mái sử dụng hệ thống làm mát liên tục mà vẫn kiểm soát tốt hóa đơn tiền điện cuối tháng.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-white mt-1 text-lg bg-green-500 rounded-full w-6 h-6 flex items-center justify-center text-sm"></i>
+                            <span class="text-green-50"><strong>Đầu tư hiệu quả, hoàn vốn nhanh:</strong> Mức chi phí lắp đặt cạnh tranh giúp bạn cố định chi phí năng lượng trong suốt 25 năm. Thời gian thu hồi vốn trung bình chỉ từ 2 đến 3 năm.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-white mt-1 text-lg bg-green-500 rounded-full w-6 h-6 flex items-center justify-center text-sm"></i>
+                            <span class="text-green-50"><strong>Cam kết chất lượng thi công & bảo hành:</strong> Sử dụng hệ thống khung rail nhôm chuyên dụng, đảm bảo an toàn tuyệt đối cho kết cấu mái. Chính sách 1 đổi 1 Inverter trong 5 năm và bảo hành hiệu suất lên đến 25 năm.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator Tool -->
+    <section id="cong-cu" class="py-24 bg-brand-gray relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-brand-dark mb-4 uppercase">Công Cụ đề xuất Đầu Tư</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto font-medium">Chỉ cần nhập mức chi phí điện hàng tháng của gia đình, hệ thống từ Green Sun sẽ tự động tính toán và đưa ra gói thiết kế mang lại hiệu quả kinh tế cao nhất.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 md:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    
+                    <!-- Input Section -->
+                    <div class="lg:col-span-5 flex flex-col justify-center">
+                        <div class="bg-brand-gray p-8 rounded-2xl border border-gray-200">
+                            <h3 class="font-heading text-xl font-bold mb-6 flex items-center gap-2 text-brand-dark uppercase">
+                                <i class="fa-solid fa-file-invoice-dollar text-brand-green"></i> Hóa đơn trung bình/tháng
+                            </h3>
+                            
+                            <div class="mb-8 bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex justify-between items-end mb-4">
+                                    <span class="text-gray-500 text-sm font-semibold">Mức chi trả:</span>
+                                    <span class="text-3xl font-black text-brand-green" id="billValueDisplay">2.000.000 ₫</span>
+                                </div>
+                                <input type="range" id="billSlider" min="500000" max="20000000" step="100000" value="2000000" class="w-full mt-2">
+                                <div class="flex justify-between text-xs text-gray-400 mt-3 font-bold">
+                                    <span>500K</span>
+                                    <span>20 Triệu+</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Loại công trình</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <button id="btnHome" class="bg-brand-green text-white py-2.5 rounded-lg font-bold shadow-md transition-all border-2 border-brand-green" type="button">Hộ gia đình</button>
+                                        <button id="btnBusiness" class="bg-white text-gray-500 py-2.5 rounded-lg font-bold hover:bg-gray-50 transition-all border-2 border-gray-200" type="button">Doanh nghiệp</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output/Dashboard Section -->
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
+                            
+                            <!-- System Size -->
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col relative overflow-hidden group hover:border-brand-green transition-colors">
+                                <div class="absolute -right-4 -top-4 opacity-[0.03] text-brand-dark transition transform group-hover:scale-110">
+                                    <i class="fa-solid fa-solar-panel text-9xl"></i>
+                                </div>
+                                <span class="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Công suất đề xuất</span>
+                                <div class="flex items-baseline gap-2 mb-2">
+                                    <span class="text-4xl font-black text-brand-dark" id="systemSize">3.5</span>
+                                    <span class="text-lg font-bold text-gray-400">kWp</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-auto font-medium">Diện tích mái cần thiết: <strong id="roofSpace" class="text-brand-dark">18</strong> m²</p>
+                            </div>
+
+                            <!-- Investment Cost -->
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col relative overflow-hidden group hover:border-brand-red transition-colors">
+                                <div class="absolute -right-4 -top-4 opacity-[0.03] text-brand-dark transition transform group-hover:scale-110">
+                                    <i class="fa-solid fa-coins text-9xl"></i>
+                                </div>
+                                <span class="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Chi phí đầu tư dự kiến</span>
+                                <div class="flex items-baseline gap-1 mb-2">
+                                    <span class="text-3xl font-black text-brand-dark" id="investmentCost">45.500.000</span>
+                                    <span class="text-sm font-bold text-gray-400">₫</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-auto font-medium">Bao gồm vật tư, nhân công & bảo hành trọn gói.</p>
+                            </div>
+
+                            <!-- Yearly Savings -->
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col relative overflow-hidden group hover:border-brand-green transition-colors">
+                                <span class="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Tiết kiệm mỗi năm</span>
+                                <div class="flex items-baseline gap-1 mb-2">
+                                    <span class="text-4xl font-black text-brand-green" id="yearlySavings">21.600.000</span>
+                                    <span class="text-sm font-bold text-gray-400">₫</span>
+                                </div>
+                                <div class="mt-auto flex items-center gap-2 bg-green-50 text-brand-green w-fit px-3 py-1.5 rounded text-xs font-bold border border-green-100">
+                                    <i class="fa-solid fa-arrow-trend-down"></i> Giảm 90% hóa đơn
+                                </div>
+                            </div>
+
+                            <!-- Payback Period & Installment -->
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col relative overflow-hidden group hover:border-brand-red transition-colors">
+                                <span class="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Thời gian hoàn vốn</span>
+                                <div class="flex items-baseline gap-2 mb-2">
+                                    <span class="text-4xl font-black text-brand-red" id="paybackYears">2.1</span>
+                                    <span class="text-lg font-bold text-gray-400">Năm</span>
+                                </div>
+                                
+                                <!-- Feature 2: Installment logic -->
+                                <div class="mt-auto bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold text-gray-500"><i class="fa-solid fa-credit-card text-brand-green"></i> Trả góp 0%:</span>
+                                        <span class="text-[10px] uppercase font-black text-brand-red bg-red-50 px-1 py-0.5 rounded">Duyệt nhanh</span>
+                                    </div>
+                                    <div class="text-lg font-black text-brand-dark" id="installmentCost">3.790.000 ₫<span class="text-xs text-gray-400 font-medium">/tháng</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Feature 3: Cashflow Chart -->
+                            <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                                <h4 class="text-sm font-bold text-brand-dark uppercase mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-chart-simple text-brand-green"></i> Tương quan chi phí sau 25 năm
+                                </h4>
+                                <div class="space-y-5">
+                                    <div>
+                                        <div class="flex justify-between text-xs mb-1.5">
+                                            <span class="text-gray-500 font-bold">Dùng điện lưới EVN (Có bù lạm phát)</span>
+                                            <span class="font-black text-gray-400" id="evn25Year">1.200.000.000 ₫</span>
+                                        </div>
+                                        <div class="w-full bg-gray-100 rounded-full h-2.5">
+                                            <div class="bg-gray-300 h-2.5 rounded-full" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-xs mb-1.5">
+                                            <span class="text-gray-800 font-bold">Đầu tư Green Sun 1 lần</span>
+                                            <span class="font-black text-brand-green" id="solar25Year">45.500.000 ₫</span>
+                                        </div>
+                                        <div class="w-full bg-gray-100 rounded-full h-2.5">
+                                            <div class="bg-brand-green h-2.5 rounded-full transition-all duration-1000 relative" id="solarBarWidth" style="width: 15%;">
+                                                <div class="absolute right-0 -top-7 bg-brand-red text-white text-[10px] font-bold px-2 py-1 rounded shadow-md whitespace-nowrap">
+                                                    Sinh lời <span id="profit25Year">1.154.500.000 ₫</span>
+                                                    <!-- Small triangle pointer -->
+                                                    <div class="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-brand-red"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-green font-bold uppercase tracking-wider text-sm mb-2 block">Cam Kết Chất Lượng</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-brand-dark mb-4 uppercase">Giá Trị Cốt Lõi</h2>
+                <div class="w-16 h-1 bg-brand-red mx-auto mb-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-gray p-8 rounded-2xl transition reveal text-center border-b-4 border-gray-200 hover:border-brand-green">
+                    <div class="w-16 h-16 bg-white text-brand-green rounded-full flex items-center justify-center text-2xl mx-auto mb-6 shadow-sm">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-brand-dark uppercase">Báo Giá Tận Xưởng</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Chúng tôi mang hàng từ kho nhà máy đến thẳng mái nhà bạn. Cấu hình đỉnh cao, sức mạnh gánh trọn vẹn thiết bị lớn với chi phí rẻ nhất phân khúc.</p>
+                </div>
+                
+                <div class="bg-brand-gray p-8 rounded-2xl transition reveal text-center delay-100 border-b-4 border-gray-200 hover:border-brand-red">
+                    <div class="w-16 h-16 bg-white text-brand-red rounded-full flex items-center justify-center text-2xl mx-auto mb-6 shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-brand-dark uppercase">Cam Kết An Toàn</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Đội ngũ kỹ thuật 5+ năm kinh nghiệm. Thi công bài bản, cam kết 100% không dột mái, không chập cháy. Bảo hành lỗi 1 đổi 1 Inverter nhanh chóng.</p>
+                </div>
+                
+                <div class="bg-brand-gray p-8 rounded-2xl transition reveal text-center delay-200 border-b-4 border-gray-200 hover:border-brand-green">
+                    <div class="w-16 h-16 bg-white text-brand-green rounded-full flex items-center justify-center text-2xl mx-auto mb-6 shadow-sm">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-brand-dark uppercase">Sinh Lời Bền Vững</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Hệ thống bền bỉ 25 năm. Quản lý minh bạch tiền điện tiết kiệm được mỗi ngày qua App. Đầu tư một lần, cắt đứt gánh nặng tài chính dài hạn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 4: Interactive Before/After Slider -->
+    <section class="py-24 bg-brand-gray relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-brand-dark mb-4 uppercase">Sự Thay Đổi Hoàn Mỹ</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto font-medium">Không chỉ tạo ra điện, hệ thống điện mặt trời Green Sun còn mang lại vẻ đẹp hiện đại, đẳng cấp và bảo vệ mái nhà của bạn khỏi thời tiết khắc nghiệt.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto reveal">
+                <div class="comparison-slider border-4 border-white">
+                    <!-- Before Image -->
+                    <img src="assets/images/before-roof.jpg" alt="Mái nhà bình thường">
+                    
+                    <!-- After Image -->
+                    <div class="comparison-overlay" id="compareOverlay">
+                        <img src="assets/images/after-roof.jpg" alt="Mái nhà lắp điện mặt trời">
+                    </div>
+                    
+                    <!-- Slider Handle -->
+                    <div class="slider-button" id="compareButton">
+                        <i class="fa-solid fa-arrows-left-right"></i>
+                    </div>
+                    
+                    <input type="range" min="0" max="100" value="50" class="comparison-range" id="compareRange">
+                    
+                    <div class="absolute bottom-4 left-4 bg-white/90 text-brand-dark font-bold px-4 py-1.5 text-xs rounded uppercase tracking-wider shadow-sm">Sau khi lắp</div>
+                    <div class="absolute bottom-4 right-4 bg-white/90 text-gray-500 font-bold px-4 py-1.5 text-xs rounded uppercase tracking-wider shadow-sm">Trước khi lắp</div>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4 font-bold"><i class="fa-solid fa-hand-pointer animate-pulse text-brand-red"></i> Kéo thanh trượt để trải nghiệm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Step Process -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-brand-dark mb-4 uppercase">Quy Trình 4 Bước Tinh Gọn</h2>
+                <div class="w-16 h-1 bg-brand-green mx-auto mb-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Desktop Connector Line -->
+                <div class="hidden md:block absolute top-10 left-0 w-full h-1 bg-gray-100 -translate-y-1/2 z-0"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative z-10 text-center reveal">
+                    <div class="w-20 h-20 mx-auto bg-white border-4 border-gray-100 rounded-full flex items-center justify-center font-heading text-2xl font-black text-brand-green mb-6 shadow-sm relative">
+                        1
+                    </div>
+                    <h3 class="font-bold mb-2 text-brand-dark">Khảo sát & Báo giá</h3>
+                    <p class="text-xs text-gray-500 px-4">Kỹ sư đo đạc mái nhà, phân tích hóa đơn điện và đưa ra giải pháp cắt giảm chi phí tối đa.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative z-10 text-center reveal delay-100">
+                    <div class="w-20 h-20 mx-auto bg-brand-green border-4 border-white rounded-full flex items-center justify-center font-heading text-2xl font-black text-white mb-6 shadow-md">
+                        2
+                    </div>
+                    <h3 class="font-bold mb-2 text-brand-dark">Ký HĐ & Thiết Kế</h3>
+                    <p class="text-xs text-gray-500 px-4">Chốt báo giá tận gốc, cam kết hợp đồng trọn gói không phát sinh bất kỳ phụ phí nào.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative z-10 text-center reveal delay-200">
+                    <div class="w-20 h-20 mx-auto bg-white border-4 border-gray-100 rounded-full flex items-center justify-center font-heading text-2xl font-black text-brand-red mb-6 shadow-sm">
+                        3
+                    </div>
+                    <h3 class="font-bold mb-2 text-brand-dark">Lắp Đặt & Thi Công</h3>
+                    <p class="text-xs text-gray-500 px-4">Đội thi công làm việc trong 3-5 ngày, cam kết quy chuẩn an toàn điện và tuyệt đối không làm dột mái nhà.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="relative z-10 text-center reveal delay-300">
+                    <div class="w-20 h-20 mx-auto bg-white border-4 border-gray-100 rounded-full flex items-center justify-center text-xl text-gray-400 mb-6 shadow-sm">
+                        <i class="fa-solid fa-power-off"></i>
+                    </div>
+                    <h3 class="font-bold mb-2 text-brand-dark">Nghiệm thu & EVN</h3>
+                    <p class="text-xs text-gray-500 px-4">Hỗ trợ làm thủ tục gắn công tơ 2 chiều và bàn giao App theo dõi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-brand-gray border-y border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-heading text-3xl font-black text-brand-dark mb-4 uppercase">Giải Đáp Thắc Mắc</h2>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden transition-all hover:border-brand-green shadow-sm">
+                    <button class="w-full px-6 py-5 text-left font-bold text-brand-dark flex justify-between items-center focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Trời mưa hoặc nhiều mây thì có điện không?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-300 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Có. Hệ thống vẫn hoạt động vào những ngày mưa/mây, hiệu suất giảm còn 20-40%. Inverter thông minh sẽ tự động lấy thêm điện lưới bù vào, đảm bảo nhà bạn không bị mất điện.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden transition-all hover:border-brand-green shadow-sm">
+                    <button class="w-full px-6 py-5 text-left font-bold text-brand-dark flex justify-between items-center focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Lắp đặt có làm hỏng, dột mái nhà không?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-300 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Hoàn toàn không. Green Sun dùng hệ rail nhôm chuyên dụng và keo chống thấm tiêu chuẩn, kẹp vào sóng tôn hoặc bát móc ngói, không khoan thủng mái. Cam kết bảo hành dột.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden transition-all hover:border-brand-green shadow-sm">
+                    <button class="w-full px-6 py-5 text-left font-bold text-brand-dark flex justify-between items-center focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Thủ tục xin phép điện lực (EVN) có rườm rà không?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-300 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Green Sun cung cấp gói "Chìa khóa trao tay". Chúng tôi sẽ đại diện làm việc với EVN, xin thay công tơ 2 chiều và nghiệm thu hoàn toàn miễn phí cho bạn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Generation Form (With Calendar Booking) -->
+    <section id="lien-he" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-2xl shadow-gray-200 border border-gray-100 overflow-hidden reveal">
+                <div class="grid grid-cols-1 md:grid-cols-5">
+                    
+                    <!-- Form Info Side -->
+                    <div class="md:col-span-2 bg-brand-green p-8 text-white flex flex-col justify-between relative overflow-hidden">
+                        <!-- Diagonal decorative shape -->
+                        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-red opacity-90 transform rotate-45 pointer-events-none"></div>
+                        
+                        <div class="relative z-10">
+                            <h3 class="font-heading text-2xl font-black mb-2 uppercase">Chốt Lịch Khảo Sát</h3>
+                            <p class="text-green-100 text-sm mb-8 font-medium">Nhận ngay bảng dự toán chi tiết với mức chiết khấu thi công tốt nhất thị trường.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-white text-brand-green rounded-full flex items-center justify-center shadow-sm">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-green-100 uppercase tracking-wider font-bold">Hotline (Zalo)</p>
+                                        <p class="font-black text-lg">0966.63.68.69</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-white text-brand-green rounded-full flex items-center justify-center shadow-sm">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-green-100 uppercase tracking-wider font-bold">Email</p>
+                                        <p class="font-bold">greensun6868@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Input Side -->
+                    <div class="md:col-span-3 p-8 md:p-10 bg-white">
+                        <form id="formKhachHang">
+    <!-- Scarcity Banner -->
+    <div class="bg-red-50 border border-red-100 p-4 rounded-lg mb-6 flex items-start gap-3">
+        <i class="fa-solid fa-fire text-brand-red mt-1 animate-pulse"></i>
+        <div>
+            <p class="text-sm font-bold text-brand-red">Siêu Sale Phá Giá Thị Trường!</p>
+            <p class="text-xs text-gray-600 mt-0.5">Chỉ còn <span class="font-bold text-brand-red">03</span> suất thi công giá gốc kèm Voucher tiền mặt 1 Triệu hôm nay.</p>
+        </div>
+    </div>
+
+    <div class="space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Họ và tên</label>
+                <!-- THÊM name="hoTen" -->
+                <input type="text" name="hoTen" required class="w-full px-4 py-3 bg-gray-50 rounded-lg border border-gray-200 focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition font-medium text-brand-dark" placeholder="Nguyễn Văn A">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Số Zalo</label>
+                <!-- THÊM name="soZalo" -->
+                <input type="tel" name="soZalo" required class="w-full px-4 py-3 bg-gray-50 rounded-lg border border-gray-200 focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition font-medium text-brand-dark" placeholder="0912 345 678">
+            </div>
+        </div>
+        
+        <div>
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Địa chỉ thi công</label>
+            <!-- THÊM name="diaChi" -->
+            <input type="text" name="diaChi" required class="w-full px-4 py-3 bg-gray-50 rounded-lg border border-gray-200 focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition font-medium text-brand-dark" placeholder="Số nhà, Quận/Huyện, Tỉnh/TP...">
+        </div>
+
+        <!-- Feature 5: Direct Calendar Booking -->
+        <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+            <label class="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-2"><i class="fa-regular fa-calendar-check text-brand-green"></i> Chọn lịch hẹn khảo sát miễn phí</label>
+            <div class="flex gap-3">
+                <!-- THÊM id="ngayHen" -->
+                <input type="date" id="ngayHen" required class="flex-1 px-4 py-3 bg-white rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-green outline-none transition font-bold text-brand-dark text-sm" min="2026-05-05">
+                <!-- THÊM id="buoiHen" và các value -->
+                <select id="buoiHen" class="w-32 px-4 py-3 bg-white rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-green outline-none transition font-bold text-brand-dark text-sm cursor-pointer">
+                    <option value="Sáng">Sáng</option>
+                    <option value="Chiều">Chiều</option>
+                </select>
+            </div>
+            <!-- THÊM trường ẩn này để code tự động gom "Ngày + Buổi" thành "Lịch Hẹn" -->
+            <input type="hidden" name="lichHen" id="lichHen">
+        </div>
+
+        <button type="submit" id="btnSubmitForm" class="w-full bg-brand-red text-white font-black py-4 rounded-lg hover:bg-red-700 transition duration-300 flex justify-center items-center gap-2 shadow-lg shadow-red-200/50 text-lg uppercase tracking-wider">
+            Hoàn Tất Đặt Lịch
+        </button>
+    </div>
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Strictly Clean 3-Color Theme) -->
+    <footer class="bg-brand-gray text-gray-600 py-12 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="assets/images/logo.png" alt="Green Sun Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-sm mb-6 max-w-sm font-medium leading-relaxed">Đơn vị tiên phong triển khai hệ thống điện mặt trời chất lượng cao tại Việt Nam. Xanh hóa không gian, tối ưu lợi nhuận.</p>
+                </div>
+                <div>
+                    <h4 class="text-brand-dark font-black mb-4 uppercase text-xs tracking-widest">Giải Pháp</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#" class="hover:text-brand-green transition">Hộ Gia Đình</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Doanh Nghiệp / Nhà Xưởng</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Bảo Trì & Vệ Sinh</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-brand-dark font-black mb-4 uppercase text-xs tracking-widest">Kết Nối</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#" class="hover:text-brand-green transition">Zalo: 0966.63.68.69</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Hotline: 0966.63.68.69</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Fanpage: Năng lượng mặt trời GREEN SUN</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold text-gray-400 uppercase tracking-wider">
+                <p>&copy; 2026 GREEN SUN VN. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-brand-green">Điều khoản</a>
+                    <a href="#" class="hover:text-brand-green">Bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-24 md:bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a href="https://zalo.me/0966636869
+        " target="_blank" class="zalo-ring w-14 h-14 bg-brand-green text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 transition transform hover:scale-110 border-2 border-white">
+            <svg viewBox="0 0 460.1 436.6" width="26" height="26" fill="currentColor">
+                <path d="M82.6 380.9c-1.8-.8-3.1-1.7-1-3.5 1.3-1.5 34.6-33.2 50.8-48.9-46.7-31.3-78.3-84.3-78.3-143.6C54.1 82.5 130.4 2.9 227.1 2.9c96.7 0 175.1 79.6 175.1 177.6s-78.3 177.6-175.1 177.6c-27.1 0-52.8-6.1-75.8-17-4.1-2.1-10.7-3.1-14.7-1.1-18.4 9.1-51.2 25.1-54 20.9zM227.1 36.9c-81.8 0-148.1 66.8-148.1 149.3 0 54.4 29.5 102 73.4 127.3 6.7 3.9 11.5 10 11.4 17.8-.1 5.9-20.9 25.7-27.7 33.1-2.9 3.2 2.3 4.2 4.1 3.3 22-11.4 46.5-24.1 48-24.1 6.3-.1 12.3 2.5 18.2 4.7 6.4 2.4 13.1 3.5 19.8 3.5 81.8 0 148.1-66.8 148.1-149.3S308.9 36.9 227.1 36.9z"/>
+                <path d="M175.2 198.8c-10.9-10.9-20.8-21.6-30.8-32.3-2.1-2.2-3.8-3.7-2.6-7.3.7-2.1 2.3-3.6 4.3-4.5 5.5-2.5 11.1-4.8 16.7-7.2 2.1-.9 4.1-1.8 6-3.2 3.8-2.8 7-6.5 10.3-10 1.9-2 3.6-4.5 5.9-5.9 5.8-3.5 12.7-2.2 17 2.8 5.7 6.5 11.5 12.8 17.1 19.3 2.1 2.4 2.5 5.3 1 8.2-1.2 2.4-3.1 4.3-4.9 6.2-4.1 4.3-8.2 8.6-12.4 12.8-1.5 1.5-2.2 3.3-1.6 5.4.9 3 2.1 6 3.6 8.7 5.9 10.6 13.9 19 23.3 26.2 2.6 2 5.6 3.5 8.7 4.8 2.3.9 4.2.3 5.8-1.4 4.5-4.6 9-9.1 13.5-13.6 3.8-3.8 8.4-4.8 13.2-2.7 8.3 3.6 16.5 7.6 24.8 11.3 3.1 1.4 4.4 3.9 4.3 7.3-.1 3.1-1.3 6-3 8.6-3 4.6-6.6 8.6-10.5 12.4-5.3 5.2-11.4 8.7-18.7 10-10.8 1.9-21.2-1-30.7-6.6-13.8-8.2-25.3-19-35.1-31.5-8.2-10.4-14.8-21.8-19.8-34.1z"/>
+            </svg>
+        </a>
+        <a href="tel:0966636869" class="w-14 h-14 bg-brand-red text-white rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-red-700 transition transform hover:scale-110 border-2 border-white">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Mobile Sticky CTA Bottom Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-[90] p-3 flex gap-3 pb-safe">
+        <button onclick="document.getElementById('cong-cu').scrollIntoView();" class="flex-1 bg-brand-gray text-brand-dark font-bold py-3 rounded-lg text-sm flex justify-center items-center gap-2 border border-gray-200">
+            <i class="fa-solid fa-calculator text-brand-green"></i> Tính phí
+        </button>
+        <button onclick="document.getElementById('lien-he').scrollIntoView();" class="flex-1 bg-brand-red text-white font-bold py-3 rounded-lg text-sm shadow-md flex justify-center items-center gap-2">
+            Đăng ký <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!-- Live Sales Notification Toast -->
+    <div id="salesToast" class="fixed bottom-20 left-4 md:bottom-6 md:left-6 z-[45] bg-white rounded-xl shadow-xl shadow-green-100/50 border border-green-100 p-3 flex items-center gap-3 sales-toast max-w-xs cursor-pointer hover:bg-gray-50 border-l-4 border-l-brand-green" onclick="document.getElementById('lien-he').scrollIntoView();">
+        <div class="w-10 h-10 bg-green-50 text-brand-green rounded-full flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <p class="text-[10px] text-gray-400 mb-0.5 font-bold uppercase" id="toastTime">Vừa xong</p>
+            <p class="text-sm font-bold text-brand-dark leading-tight" id="toastMessage">Khách hàng Vừa đăng ký...</p>
+        </div>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div id="exitPopup" class="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-brand-dark/80 backdrop-blur-sm">
+        <div class="popup-content bg-white rounded-3xl shadow-2xl max-w-lg w-full relative overflow-hidden border-4 border-brand-green">
+            <button id="closePopup" class="absolute top-4 right-4 text-gray-400 hover:text-brand-red z-10 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="bg-brand-gray p-6 text-center border-b border-gray-200">
+                <h3 class="font-heading text-2xl font-black text-brand-dark mb-2 uppercase text-brand-red">Khoan Đã!</h3>
+                <p class="text-gray-600 font-medium">Bạn đang được tặng Voucher giảm giá trực tiếp.</p>
+            </div>
+            
+            <div class="p-8 text-center">
+                <div class="bg-white text-brand-green p-4 rounded-xl border-2 border-dashed border-brand-green mb-6 shadow-sm">
+                    <p class="text-xs text-gray-500 mb-1 uppercase font-bold">Mã Giảm Giá Của Bạn</p>
+                    <p class="text-4xl font-black font-heading">GS-1TRIEU</p>
+                </div>
+                
+                <ul class="text-left text-sm text-gray-600 space-y-3 mb-8 font-medium">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> Giảm sốc <strong class="text-brand-dark">1.000.000đ</strong> thẳng vào chi phí hợp đồng.</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> Tặng 2 năm vệ sinh tấm pin miễn phí.</li>
+                </ul>
+                
+                <button onclick="document.getElementById('lien-he').scrollIntoView(); document.getElementById('exitPopup').classList.remove('show');" class="w-full bg-brand-red text-white font-black py-4 rounded-xl hover:bg-red-700 transition shadow-lg text-lg uppercase">
+                    Lấy Mã Ưu Đãi
+                </button>
+                <button id="declinePopup" class="mt-4 text-xs font-bold text-gray-400 hover:text-gray-600 uppercase tracking-wider">
+                    Bỏ qua ưu đãi này
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxvIH-L72kN2-sQW2AerP7pTdPWpsfx4mTREVgNERIHHN-vJY0-fY98Zh7ckA_-4PKb/exec'; 
+  const form = document.getElementById('formKhachHang');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault(); 
+    
+    const btnSubmit = document.getElementById('btnSubmitForm');
+    const originalText = btnSubmit.innerHTML;
+    
+    // Đổi trạng thái nút
+    btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG XỬ LÝ...';
+    btnSubmit.disabled = true;
+
+    // Gom dữ liệu lịch hẹn
+    const ngayHen = document.getElementById('ngayHen').value;
+    const buoiHen = document.getElementById('buoiHen').value;
+    document.getElementById('lichHen').value = ngayHen + " - " + buoiHen;
+
+    // 1. Kích hoạt gửi dữ liệu ngầm cho Google (Không dùng .then() để bắt nó chờ nữa)
+    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'}).catch(error => console.error('Lỗi ngầm:', error));
+
+    // 2. Chuyển hướng khách hàng đi luôn (Tạo một độ trễ giả 0.8 giây cho mượt)
+    setTimeout(() => {
+        alert("Lịch hẹn đã được ghi nhận. Đang chuyển hướng tới Zalo...");
+        form.reset(); // Xóa trắng form
+        btnSubmit.innerHTML = originalText; // Trả lại nút ban đầu
+        btnSubmit.disabled = false;
+        
+        window.open('https://zalo.me/0966636869', '_blank'); // Mở Zalo
+    }, 800); 
+  });
+</script>
+</html>
+
